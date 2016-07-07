@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <% include partials/page/head.ejs %>
+  </head>
+  <body>
+      <% include partials/page/header.ejs %>
+      <div class="container">
+    <h1><%= title %></h1>
+        <p>Default page from EJS template in views folder.</p>
+        <ul>
+        <% for(var i = 0; i <users.length; i++) { %>
+            <li><%= users[i] %></li>
+        <% } %>
+        </ul>
+      </div> <!-- container -->
+      <% include partials/page/footer.ejs %>
+      <% include partials/page/jsdefaults.ejs %>
+  </body>
+</html>
