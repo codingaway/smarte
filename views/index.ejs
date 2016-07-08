@@ -134,7 +134,7 @@
                 <div class="col-sm-3 col-lg-3">
       		<div class="dash-unit">
                 <dtitle><%= item.name %></dtitle>
-                <p>Guest Count: <%= item.count%></p>
+                <p>Guest Count:<span id="<%= item.name.replace(' ', '_').toLowerCase() + "_count"%>"><%= item.count%></span></p>
                 <p>Noise Level: <%= item.noise %>dB</p>
                 <p>Temp: <%= item.temp%> C</p>
 			</div>

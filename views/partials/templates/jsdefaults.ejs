@@ -24,3 +24,15 @@
 	<script src="/themes/js/jquery.flexslider.js" type="text/javascript"></script>
 
     <script type="text/javascript" src="/themes/js/admin.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+    
+    socket.on('update_zone', function(data){
+        var item_id = data.name.replace(' ', '_').toLowerCase()+ '_count';
+        
+        $('#'+item_id).html(data.count);
+        console.log(item_id + ' : ' + data.count);
+    });
+</script>
