@@ -131,12 +131,17 @@
 	  <!-- SECOND ROW OF BLOCKS --> 
    <% data.forEach(function(item){ %>
                 
-                <div class="col-sm-3 col-lg-3">
-      		<div class="dash-unit">
+                <div class="col-sm-3 col-md-3 col-lg-3 zone_container">
+      		<div class="dash-unit square">
                 <dtitle><%= item.name %></dtitle>
-                <p>Guest Count:<span id="<%= item.name.replace(' ', '_').toLowerCase() + "_count"%>"><%= item.count%></span></p>
-                <p>Noise Level: <%= item.noise %>dB</p>
-                <p>Temp: <%= item.temp%> C</p>
+                <p>Guarded by  - <span>Storm trooper 1 </span></p>
+                <span class="guest_count" id="<%= item.name.replace(' ', '_').toLowerCase() + "_count"%>"><%= item.count%></span>
+                <p>Persons</p>
+                <div class="moreinfo">
+                <p>Noise - <%= item.noise %>dB<br />
+                Temp - <%= item.temp%> C<br />
+                Light - 50 L C</p>
+                </div>
 			</div>
         </div>
                 

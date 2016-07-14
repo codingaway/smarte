@@ -62,6 +62,7 @@ h5 {
 	background-color: #3d3d3d;
 	color:white;
 	height:290px;
+    padding: 10px;
 }
 
 .dash-unit:hover {
@@ -849,6 +850,22 @@ a:hover {
     font-size: .9em;
 }
 
+.zone_container {
+   text-align: center;
+}
+
+.guest_count {
+    font-size: 350%;
+    font-weight: 200;
+    display: block;
+    line-height: normal;
+    color: aqua;
+}
+
+.moreinfo {
+    text-align: left;
+    padding-top: 40px;
+}
 /**********Media Styles**********/   
 
 @media (max-width: 360px){
