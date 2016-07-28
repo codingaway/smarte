@@ -441,7 +441,14 @@ digiclock {
 }
 .framemail .window .mail li p {
     font: 13px/24px sans-serif;
-    left: 56px;
+    left: 10px;
+    position: absolute;
+    top: 3px;
+}
+
+.framemail .window .mail li .datetime {
+    font: 13px/24px sans-serif;
+    right: 10px;
     position: absolute;
     top: 3px;
 }
@@ -452,8 +459,8 @@ digiclock {
 }
 .framemail .window .mail li .message {
     color: #999;
-    overflow: hidden;  
-    text-overflow: ellipsis;
+/*    overflow: hidden;  */
+/*    text-overflow: ellipsis;*/
     top: 21px;  
     white-space: nowrap;
 }
@@ -865,6 +872,11 @@ a:hover {
 .moreinfo {
     text-align: left;
     padding-top: 40px;
+}
+
+.datetime {
+    float: right;
+    display: block;
 }
 /**********Media Styles**********/   
 

@@ -35,4 +35,23 @@
         $('#'+item_id).html(data.count);
         console.log(item_id + ' : ' + data.count);
     });
+
+socket.on('update_msg', function(msg_data){        
+        $('#msg_list').prepend(
+            '<li><i class="unread openmodal"></i> \
+                    \
+			         <p class="sender">' + msg_data.from + '</p> \
+                    <span class="datetime">' + msg_data.datetime + '</span> \
+			         <p class="message">' + msg_data.message +'</p> \
+			         <div class="actions"> \
+            </li>'
+        );
+        $('#msg_list li:last').remove();
+        console.log(item_id + ' New message  ' + msg_data.datetime+ ' ' + msg_data.from + '\n'+  msg_data.message);
+    });
+
+    $('.openmodal').on('click', function (e) {
+        var html_text = $(this).html()
+        $('#modalnew').modal('show');
+    });
 </script>

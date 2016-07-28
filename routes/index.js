@@ -21,5 +21,24 @@ module.exports = function(io){
         res.end();
     });
     
+    /** 
+        Handle REST post message for new message 
+        Upon recieving a new message data app should update DB
+    */
+    router.post('/message', function(req, res) {
+        var msg_data = req.body;
+        /* Message structure
+            {
+                "from" : "SEC 1",
+                "message": "Message body text here. ",
+                "datetime": "27-07-2016"
+            }
+        */
+        // update_db_msg(msg_data)
+        res.writeHead(200, {'Content-Type': 'text/html'}); // Send OK
+        io.emit('update_msg', msg_data);
+        res.end();
+    });
+    
     return router;
 }
