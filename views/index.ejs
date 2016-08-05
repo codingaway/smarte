@@ -1,133 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <% include partials/templates/head.ejs %>
-  </head>
-  <body>
-      <% include partials/templates/header.ejs %>
+    <head>
+        <% include partials/templates/head.ejs %>
+    </head>
+    <body>
+        <% include partials/templates/header.ejs %>
 
-    <div class="container contnets">
+        <div class="container contnets">
 
-	  <!-- FIRST ROW OF BLOCKS -->     
-      <div class="row">
+            <!-- FIRST ROW OF BLOCKS -->     
+            <div class="row">
 
-      <!-- USER PROFILE BLOCK -->
-        <div class="col-sm-3 col-lg-3">
-      		<div class="dash-unit">
-	      		<dtitle>Event Manager</dtitle>
-	      		<hr>
-				<div class="thumbnail">
-				</div><!-- /thumbnail -->
-				<h1>Event Manager</h1>
-				<h3>Electric Picnic </h3>
-				<br>
-					<div class="info-user">
-						<span aria-hidden="true" class="li_user fs1"></span>
-						<span aria-hidden="true" class="li_settings fs1"></span>
-						<span aria-hidden="true" class="li_mail fs1"></span>
-						<span aria-hidden="true" class="li_key fs1"></span>
-					</div>
-				</div>
-        </div>
-           <div class="col-sm-3 col-lg-3">
-       <!-- MAIL BLOCK -->
-      		<div class="dash-unit">
-      		<dtitle>Messages (1)</dtitle>
-      		<hr>
-      		<div class="framemail">
-    			<div class="window">
-			        <ul class="mail" id=msg_list>
-			            <li>
-			                <i class="unread"></i>
-			                <p class="sender">Adam W.</p>
-			                <p class="message"><strong>Working</strong> - This is the last...</p>
-			            </li>
-			            <li>
-			                <i class="read"></i>
-			                <p class="sender">Dan E.</p>
-			                <p class="message"><strong>Hey man!</strong> - You have to taste ...</p>
-			            </li>
-			            <li>
-			                <i class="read"></i>
-			                <p class="sender">Leonard N.</p>
-			                <p class="message"><strong>New Mac :D</strong> - So happy with ...</p>
-			                <div class="actions">
-			            </li>
-			            <li>
-			                <i class="read"></i>
-			                <p class="sender">Peter B.</p>
-			                <p class="message"><strong>Thank you</strong> - Finally I can ...</p>
-			                <div class="actions">
-			            </li>
-			        </ul>
-    			</div>
-			</div>
-		</div><!-- /dash-unit -->
-    </div><!-- /span3 -->
-
-          	  <!--  STATS -->
-        <div class="col-sm-3 col-lg-3">
-      		<div class="dash-unit">
-	      		<dtitle>Zone Stats</dtitle>
-	      		<hr>
-	      		<br>
-	      		<br>
-	            <div class="flexslider">
-            </div>
-				<div class="cont">
-					<p>Stats</p>
-				</div>   
-			</div>
-        </div>
-        
-        <div class="col-sm-3 col-lg-3">
-
-      <!-- LOCAL TIME BLOCK -->
-      		<div class="half-unit">
-	      		<dtitle>Local Time</dtitle>
-	      		<hr>
-		      		<div class="clockcenter">
-			      		<digiclock>12:45:25</digiclock>
-		      		</div>
-			</div>
-
-      <!-- SERVER UPTIME -->
-			<div class="half-unit">
-	      		<dtitle>Server Uptime</dtitle>
-	      		<hr>
-	      		<div class="cont">
-					<p><img src="/themes/img/up.png" alt=""> <bold>Up</bold> | 356ms.</p>
-				</div>
-			</div>
-
-        </div>
-          
-          
-      </div><!-- /row -->
-      <div class="row">
-      
-	  <!-- SECOND ROW OF BLOCKS --> 
-   <% data.forEach(function(item){ %>
-                
-                <div class="col-sm-3 col-md-3 col-lg-3 zone_container">
-      		<div class="dash-unit square">
-                <dtitle><%= item.name %></dtitle>
-                <p>Guarded by  - <span>Storm trooper 1 </span></p>
-                <span class="guest_count" id="<%= item.name.replace(' ', '_').toLowerCase() + "_count"%>"><%= item.count%></span>
-                <p>Persons</p>
-                <div class="moreinfo">
-                <p>Noise - <%= item.noise %>dB<br />
-                Temp - <%= item.temp%> C<br />
-                Light - 50 L C</p>
+                <!-- USER PROFILE BLOCK -->
+                <div class="col-sm-3 col-lg-3">
+                    <div class="dash-unit">
+                        <dtitle>Event Manager</dtitle>
+                        <hr>
+                        <div class="thumbnail">
+                        </div><!-- /thumbnail -->
+                        <h1>A Fantastic Event</h1>
+                        <h3>Dashboard</h3>
+                        <br>
+                        <div class="info-user">
+                            <span aria-hidden="true" class="li_user fs1"></span>
+                            <span aria-hidden="true" class="li_settings fs1"></span>
+                            <span aria-hidden="true" class="li_mail fs1"></span>
+                            <span aria-hidden="true" class="li_key fs1"></span>
+                        </div>
+                    </div>
                 </div>
-			</div>
-        </div>
-                
-            <% }); %>
-      </div><!-- /row -->
-	</div> <!-- /container -->
-      
-      <% include partials/templates/footer.ejs %>
-      <% include partials/templates/jsdefaults.ejs %>
-  </body>
+                <div class="col-sm-3 col-lg-3">
+                    <!-- MAIL BLOCK -->
+                    <div class="dash-unit">
+                        <dtitle>Messages (1)</dtitle>
+                        <hr>
+                        <div class="framemail">
+                            <div class="window">
+                                <ul class="mail" id=msg_list>
+                                    <li>
+                                        <i class="unread"></i>
+                                        <p class="sender">Adam W.</p>
+                                        <p class="message"><strong>Working</strong> - This is the last...</p>
+                                    </li>
+                                    <li>
+                                        <i class="read"></i>
+                                        <p class="sender">Dan E.</p>
+                                        <p class="message"><strong>Hey man!</strong> - You have to taste ...</p>
+                                    </li>
+                                    <li>
+                                        <i class="read"></i>
+                                        <p class="sender">Leonard N.</p>
+                                        <p class="message"><strong>New Mac :D</strong> - So happy with ...</p>
+                                        <div class="actions">
+                                    </li>
+                                    <li>
+                                        <i class="read"></i>
+                                        <p class="sender">Peter B.</p>
+                                        <p class="message"><strong>Thank you</strong> - Finally I can ...</p>
+                                        <div class="actions">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /dash-unit -->
+                </div><!-- /span3 -->
+
+                <!--  STATS -->
+                <div class="col-sm-3 col-lg-3">
+                    <div class="dash-unit">
+                        <dtitle>Zone Stats</dtitle>
+                        <hr>
+                        <br>
+                        <br>
+                        <div class="flexslider">
+                        </div>
+                        <div class="cont">
+                            <p>Stats</p>
+                        </div>   
+                    </div>
+                </div>
+
+                <div class="col-sm-3 col-lg-3">
+
+                    <!-- LOCAL TIME BLOCK -->
+                    <div class="half-unit">
+                        <dtitle>Local Time</dtitle>
+                        <hr>
+                        <div class="clockcenter">
+                            <digiclock>12:45:25</digiclock>
+                        </div>
+                    </div>
+
+                    <!-- SERVER UPTIME -->
+                    <div class="half-unit">
+                        <dtitle>Server Uptime</dtitle>
+                        <hr>
+                        <div class="cont">
+                            <p><img src="/themes/img/up.png" alt=""> <bold>Up</bold> | 356ms.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div><!-- /row -->
+            <div class="row">
+
+                <!-- SECOND ROW OF BLOCKS --> 
+                <% data.forEach(function(item){ %>
+
+                <div class="col-sm-3 col-md-3 col-lg-3 zone_container">
+                    <div id="<%= item.name.replace(' ', '_').toLowerCase() %>" class="dash-unit square zone_alert">
+                        <dtitle><%= item.name %></dtitle>
+                        <p>Guarded by  - <span class="" id="<%= item.name.replace(' ', '_').toLowerCase() + "_gname" %>"><%= item.g_name %></span></p>
+                        <span class="guest_count" id="<%= item.name.replace(' ', '_').toLowerCase() + "_count"%>"><%= item.count%></span>
+                        <p>Persons</p>
+                        <div class="moreinfo">
+                            <p> Noise - <span class="" id="<%= item.name.replace(' ', '_').toLowerCase() + "_noise"%>"><%= item.noise %></span> </p>
+                            <p> Temp - <span class="" id="<%= item.name.replace(' ', '_').toLowerCase() + "_temp"%>"><%= item.temp %></span> </p>
+                        </div>
+                    </div>
+                </div>
+
+                <% }); %>
+            </div><!-- /row -->
+        </div> <!-- /container -->
+
+        <% include partials/templates/footer.ejs %>
+        <% include partials/templates/jsdefaults.ejs %>
+    </body>
 </html>

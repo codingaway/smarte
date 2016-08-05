@@ -3,7 +3,7 @@ module.exports = function(io){
     var router = express.Router();
     
     /* GET home page. */
-    var data = require("../data.json");
+    var data = require("../data.json"); /* JSON file containing data */
 
     io.on('connection', function(socket){
       console.log('a user connected');
