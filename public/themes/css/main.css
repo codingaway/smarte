@@ -863,6 +863,9 @@ a:hover {
 .zone_alert {  
     border: red thick solid;
 }
+.zone_online {  
+    border: green thick solid;
+}
 
 .guest_count {
     font-size: 350%;

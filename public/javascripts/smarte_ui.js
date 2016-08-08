@@ -16,10 +16,10 @@ var zones = {
 function check_zones() {
     jQuery.each(zones, function (key, val) {
         zones[key] -= 10;
-        if (zones[key] < 0)
+        if (zones[key] < 0) {
+            $('#' + key).removeClass('zone_online');
             $('#' + key).addClass('zone_alert');
-        else
-            $('#' + key).removeClass('zone_alert');
+        }
     });
 }
 setInterval(check_zones, 1000);
@@ -38,6 +38,10 @@ socket.on('update_zone', function (data) {
 
     // Update zone data TTL
     zones[zone_name] = 100;
+    
+    // Change zone status highlighter
+    $('#' + zone_name).removeClass('zone_alert');
+    $('#' + zone_name).addClass('zone_online');
 });
 
 socket.on('update_msg', function (msg_data) {
