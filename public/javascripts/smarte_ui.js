@@ -38,29 +38,30 @@ socket.on('update_zone', function (data) {
 
     // Update zone data TTL
     zones[zone_name] = 100;
-    
+
     // Change zone status highlighter
     $('#' + zone_name).removeClass('zone_alert');
     $('#' + zone_name).addClass('zone_online');
 });
 
 socket.on('update_msg', function (msg_data) {
-    $('#msg_list').prepend(
-            '<li><i class="unread openmodal"></i> \
-                    \
-			         <p class="sender">' + msg_data.from + '</p> \
-                    <span class="datetime">' + msg_data.datetime + '</span> \
-			         <p class="message">' + msg_data.message + '</p> \
-			         <div class="actions"> \
-            </li>'
-            );
-    $('#msg_list li:last').remove();
-    console.log(item_id + ' New message  ' + msg_data.datetime + ' ' + msg_data.from + '\n' + msg_data.message);
+    
+    var msg_div = '<li> \
+                <h4><span class="glyphicon-envelope"> </span><span class="sender">' + msg_data.from  + '</span>' + ' </span><span class="datetime">' + msg_data.datetime + '</span></h4> \
+                <div> \
+                    <p class="message">' + msg_data.message + '</p> \
+                </div> \
+            </li>';
+    
+    $('.mail').prepend(msg_div);
+    var msgCount = $('.mail li').length;
+    console.log("Msg count: " + msgCount);
+    
+    if ( msgCount > 4) {
+        $('.mail li:last').remove();
+    }
+    
+    // Refresh accordion
+    $( ".mail" ).accordion( "refresh" );
+    console.log(' New message  ' + msg_data.datetime + ' ' + msg_data.from + '\n' + msg_data.message);
 });
-
-$('.openmodal').on('click', function (e) {
-    var html_text = $(this).html()
-    $('#modalnew').modal('show');
-});
-
-

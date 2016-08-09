@@ -424,6 +424,11 @@ digiclock {
     height: 48px;
     width: 6px;
 }
+.framemail .window .mail li h4 {
+    display: inline-block;
+    height: 48px;
+    width: 6px;
+}
 .framemail .window .mail li .read {
     background-color: #ddd;
 }
@@ -459,8 +464,8 @@ digiclock {
 }
 .framemail .window .mail li .message {
     color: #999;
-/*    overflow: hidden;  */
-/*    text-overflow: ellipsis;*/
+    overflow: hidden;  
+    text-overflow: ellipsis;
     top: 21px;  
     white-space: nowrap;
 }
@@ -880,10 +885,51 @@ a:hover {
     padding-top: 40px;
 }
 
+.msg_container {
+    position: relative;
+    overflow: hidden;
+}
+
+.msg_container .window {
+    position: relative;
+    clear: both;
+}
+.msg_container p {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+.msg_container .window .mail li p {
+
+}
+
+.msg_container .window .mail li .datetime {
+
+}
+.msg_container .window .mail li .sender {
+
+}
+.msg_container .window .mail li .message {
+
+}
+.msg_container .window .mail li .message strong {
+
+}
+
 .datetime {
     float: right;
     display: block;
 }
+
+.ui-accordion .ui-accordion-content{
+overflow-y: scroll !important;
+}
+
+.ui-accordion-content {
+    max-height: 50px;
+}
+
 /**********Media Styles**********/   
 
 @media (max-width: 360px){
