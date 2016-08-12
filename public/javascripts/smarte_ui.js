@@ -28,11 +28,13 @@ socket.on('update_zone', function (data) {
     var zone_name = data.name.replace(' ', '_').toLowerCase();
     var count_id = data.name.replace(' ', '_').toLowerCase() + '_count';
     var noise_id = data.name.replace(' ', '_').toLowerCase() + '_noise';
+    var light_id = data.name.replace(' ', '_').toLowerCase() + '_light';
     var temp_id = data.name.replace(' ', '_').toLowerCase() + '_temp';
     var gname_id = data.name.replace(' ', '_').toLowerCase() + '_gname';
 
     $('#' + count_id).html(data.count);
     $('#' + noise_id).html(data.noise);
+    $('#' + light_id).html(data.light);
     $('#' + temp_id).html(data.temp);
     $('#' + gname_id).html(data.gname);
 
@@ -45,23 +47,42 @@ socket.on('update_zone', function (data) {
 });
 
 socket.on('update_msg', function (msg_data) {
-    
+
     var msg_div = '<li> \
-                <h4><span class="glyphicon-envelope"> </span><span class="sender">' + msg_data.from  + '</span>' + ' </span><span class="datetime">' + msg_data.datetime + '</span></h4> \
+                <h4><span class="glyphicon-envelope"> </span><span class="sender">' + msg_data.from + '</span>' + ' </span><span class="datetime">' + msg_data.datetime + '</span></h4> \
                 <div> \
                     <p class="message">' + msg_data.message + '</p> \
                 </div> \
             </li>';
-    
+
     $('.mail').prepend(msg_div);
     var msgCount = $('.mail li').length;
     console.log("Msg count: " + msgCount);
-    
-    if ( msgCount > 4) {
+
+    if (msgCount > 4) {
         $('.mail li:last').remove();
     }
-    
+
     // Refresh accordion
-    $( ".mail" ).accordion( "refresh" );
+    $(".mail").accordion("refresh");
     console.log(' New message  ' + msg_data.datetime + ' ' + msg_data.from + '\n' + msg_data.message);
 });
+
+/* Functio for display dashboard uptime */
+var date = new Date();
+var startTime = date.getTime();
+
+function uptimeUpdate() {
+    var now = new Date();
+    var difference = (now - startTime);
+
+    days = Math.floor(difference / (60 * 60 * 1000 * 24) * 1);
+    hours = Math.floor((difference % (60 * 60 * 1000 * 24)) / (60 * 60 * 1000) * 1);
+    mins = Math.floor(((difference % (60 * 60 * 1000 * 24)) % (60 * 60 * 1000)) / (60 * 1000) * 1);
+    secs = Math.floor((((difference % (60 * 60 * 1000 * 24)) % (60 * 60 * 1000)) % (60 * 1000)) / 1000 * 1);
+
+    var outputText = hours + 'h ' + mins + 'm ' + secs + 's';
+    $('#uptime').text(outputText);
+    // console.log(outputText);
+}
+setInterval(uptimeUpdate, 1000);

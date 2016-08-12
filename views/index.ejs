@@ -74,7 +74,7 @@
                         <dtitle>Server Uptime</dtitle>
                         <hr>
                         <div class="cont">
-                            <p><img src="/themes/img/up.png" alt=""> <bold>Up</bold> | 356ms.</p>
+                            <p><img src="/themes/img/up.png" alt=""> <bold>Up</bold> | <span id="uptime"></span></p>
                         </div>
                     </div>
 
@@ -94,7 +94,7 @@
                         <span class="guest_count" id="<%= item.name.replace(' ', '_').toLowerCase() + "_count"%>"><%= item.count%></span>
                         <p>Persons</p>
                         <div class="moreinfo">
-                            <p> Noise - <span class="" id="<%= item.name.replace(' ', '_').toLowerCase() + "_noise"%>"><%= item.noise %></span> </p>
+                            <p> Light - <span class="" id="<%= item.name.replace(' ', '_').toLowerCase() + "_light"%>"><%= item.light %></span> </p>
                             <p> Temp - <span class="" id="<%= item.name.replace(' ', '_').toLowerCase() + "_temp"%>"><%= item.temp %></span> </p>
                         </div>
                     </div>
