@@ -871,6 +871,11 @@ a:hover {
 .zone_online {  
     border: green thick solid;
 }
+.zone_disable {  
+    border: grey thick solid;
+    background-color: grey;
+    cursor: not-allowed;
+}
 
 .guest_count {
     font-size: 350%;

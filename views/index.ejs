@@ -88,15 +88,7 @@
                 <% data.forEach(function(item){ %>
 
                 <div class="col-sm-3 col-md-3 col-lg-3 zone_container">
-                    <div id="<%= item.name.replace(' ', '_').toLowerCase() %>" class="dash-unit square zone_alert">
-                        <dtitle><%= item.name %></dtitle>
-                        <p>Guarded by  - <span class="" id="<%= item.name.replace(' ', '_').toLowerCase() + "_gname" %>"><%= item.g_name %></span></p>
-                        <span class="guest_count" id="<%= item.name.replace(' ', '_').toLowerCase() + "_count"%>"><%= item.count%></span>
-                        <p>Persons</p>
-                        <div class="moreinfo">
-                            <p> Light - <span class="" id="<%= item.name.replace(' ', '_').toLowerCase() + "_light"%>"><%= item.light %></span> </p>
-                            <p> Temp - <span class="" id="<%= item.name.replace(' ', '_').toLowerCase() + "_temp"%>"><%= item.temp %></span> </p>
-                        </div>
+                    <div id="<%= item.name.replace(' ', '_').toLowerCase() %>" class="dash-unit square zone_alert <%= item.enable ? 'zone_enable' : 'zone_disable' %> ">
                     </div>
                 </div>
 

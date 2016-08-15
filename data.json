@@ -3,24 +3,28 @@
     "name": "Zone 1",
     "count": 10,
     "temp": 17.4,
-    "noise": 25.3
+    "noise": 25.3,
+    "enable": true
   },
   {
     "name": "Zone 2",
     "count": 8,
     "temp": 17.4,
-    "noise": 25.3
+    "noise": 25.3,
+    "enable": true
   },
   {
     "name": "Zone 3",
     "count": 12,
     "temp": 17.4,
-    "noise": 25.3
+    "noise": 25.3,
+    "enable": false
   },
   {
     "name": "Zone 4",
     "count": 6,
     "temp": 17.4,
-    "noise": 25.3
+    "noise": 25.3,
+    "enable": false
   }
 ]
