@@ -47,10 +47,11 @@ exports.updateMsg = function (msgData, callback) {
 exports.get5Msgs = function (callback) {
     pool.getConnection(function (conErr, connection) {
         // Use the connection
-        queryString = 'SELECT security_stuff.fname, messages.message,\n\
-                messages.datetime FROM messages INNER join security_stuff on \n\
-                messages.sender = security_stuff.id\n\
-                ORDER by messages.datetime desc LIMIT 5';
+//        queryString = 'SELECT security_stuff.fname, messages.message,\n\
+//                messages.datetime FROM messages INNER join security_stuff on \n\
+//                messages.sender = security_stuff.id\n\
+//                ORDER by messages.datetime desc LIMIT 5';
+        queryString = 'SELECT sender, message, datetime FROM messages ORDER by datetime desc LIMIT 5';
         connection.query(queryString, function (err, rows) {
             // And done with the connection.
             connection.release();

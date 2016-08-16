@@ -69,7 +69,7 @@ socket.on('update_msg', function (msg_data) {
         var dateString = new Date(msg_data[i].datetime).toISOString().slice(0, 19).replace('T', ' ');
         
         msg_div += '<li> \
-                <h4><span class="glyphicon-envelope"> </span><span class="sender">' + msg_data[i].fname + '</span><span class="datetime">' + dateString + '</span></h4> \
+                <h4><span class="glyphicon-envelope"> </span><span class="sender">' + msg_data[i].sender + '</span><span class="datetime">' + dateString + '</span></h4> \
                 <div> \
                     <p class="message">' + msg_data[i].message + '</p> \
                 </div> \
