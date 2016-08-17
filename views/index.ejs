@@ -44,19 +44,22 @@
                 </div><!-- /span3 -->
 
                 <!--  STATS -->
+                <!-- GRAPH CHART - lineandbars.js file -->     
                 <div class="col-sm-3 col-lg-3">
                     <div class="dash-unit">
                         <dtitle>Zone Stats</dtitle>
                         <hr>
-                        <br>
-                        <br>
-                        <div class="flexslider">
+                        <div class="section-graph">
+                            <div id="zonechart"></div>
+                            <br>
+                            <div class="graph-info">
+                                <span class="graph-info-big"></span>
+                                <span class="graph-info-small">Guest counts</span>
+                            </div>
                         </div>
-                        <div class="cont">
-                            <p>Stats</p>
-                        </div>   
                     </div>
                 </div>
+
 
                 <div class="col-sm-3 col-lg-3">
 
@@ -94,6 +97,9 @@
 
                 <% }); %>
             </div><!-- /row -->
+            <div class="row">
+                <div id="char1" style="width:100%; height:400px;"></div>
+            </div>
         </div> <!-- /container -->
 
         <% include partials/templates/footer.ejs %>
