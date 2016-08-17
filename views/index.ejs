@@ -37,6 +37,14 @@
                         <div class="msg_container">
                             <div class="window">
                                 <ul class="mail">
+                                    <% msg_data.forEach(function(msg){ %>
+                                    <li>
+                                        <h4><span class="glyphicon-envelope"> </span><span class="sender"><%= msg.sender %></span><span class="datetime"><%= new Date(msg.datetime).toISOString().slice(0, 19).replace('T', ' '); %></span></h4>
+                                        <div>
+                                            <p class="message"><%=  msg.message %></p>
+                                        </div>
+                                    </li>
+                                    <% }); %> 
                                 </ul>
                             </div>
                         </div>

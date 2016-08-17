@@ -11,7 +11,12 @@ module.exports = function (io) {
     });
 
     router.get('/', function (req, res, next) {
-        res.render('index', {title: 'Securie', data: data});
+        
+        db.get5Msgs(function (msgs) {
+            if (msgs) {
+                res.render('index', {title: 'Securie', data: data , msg_data: msgs});
+            }
+        });    
     });
 
     /* REST methods */
