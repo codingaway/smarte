@@ -25,7 +25,7 @@ $(document).ready(function () {
     var chart,
             categories = ['Categorie 1', 'Categorie 2', 'Categorie 3', 'Categorie 4', 'Categorie 5', 'Categorie 6', 'Categorie 7', 'Categorie 8', 'Categorie 9', 'Categorie 10'],
             serie1 = [3, 4, 0, 4, 2, 0, 0, 3, 3, 1],
-            serie2 = [2, 1, 2, 3, 2, 1, 0, 2, 2, 1];
+            serie2 = [5, 6, 7, 8, 7, 6, 5, 7, 7, 6];
     var chartingOptions = {
         chart: {
             renderTo: 'zonechart',
@@ -60,10 +60,10 @@ $(document).ready(function () {
         series: [{
                 name: 'Zone 1',
                 data: serie1
-            }, {
-                name: 'Zone 2',
-                data: serie2,
-                color: 'blue'
+            }, {name: 'More Awesomness',
+                color: '#fff',
+                type: 'line',
+                data: serie2
             }],
         credits: {
             enabled: false
@@ -131,8 +131,11 @@ $(document).ready(function () {
 
         // Update chart series
         var zone_id = data.name.slice(-1);
+            if(zone_id == 1 ) {
         console.log('zone_id is: ' + zone_id + " Count: " + data.count);
-        chart.series[zone_id - 1].addPoint(data.count, true, true);
+        chart.series[0].addPoint(data.count, true, true);
+        chart.series[1].addPoint(data.count + 5, true, true);
+    }
 
         // Change zone status highlighter
         $('#' + zone_name).removeClass('zone_alert');
